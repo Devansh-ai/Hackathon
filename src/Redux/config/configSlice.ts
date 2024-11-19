@@ -2,15 +2,17 @@ import {createSlice} from '@reduxjs/toolkit';
 
 
 interface ConfigModal {
-  isLoading: boolean;
-  count: number;
-  products?: any;
-
-  total:number,
-  cartId?:[{
-    id:number,
-    count:number
-  }]
+  expenses:any,
+  funds:any,
+  
+    Food:number,
+    Transport:number,
+    Shopping:number,
+    Education:number,
+  
+  products:any,
+  totalfunds:number,
+  totalexpenses:number
 }
 
 type ActionType = {
@@ -18,7 +20,7 @@ type ActionType = {
   payload: any;
 };
 
-let initialState = {
+let initialState:ConfigModal = {
   expenses:[],
   funds:[],
   
@@ -38,7 +40,7 @@ const ConfigSlice = createSlice({
   initialState,
   reducers: {
    addFunds:(state,action)=>{
-    const data:number=action.payload
+    const data:{addFund:number}=action.payload
     console.log(data,"payload")
     state.funds.push(data)
    

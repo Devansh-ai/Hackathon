@@ -36,14 +36,14 @@ const WalletScreen = () => {
     setAddAmount({...addAmount,addExpense:0,type:''})
 
   }
-  const onFundChange=(text:number)=>
+  const onFundChange=(text:string)=>
   {
-    setAddAmount({...addAmount,addFund:text})
+    setAddAmount({...addAmount,addFund:parseInt(text)})
     
   }
-  const onExpenseChange=(text:number)=>
+  const onExpenseChange=(text:string)=>
   {
-    setAddAmount({...addAmount,addExpense:text})
+    setAddAmount({...addAmount,addExpense:parseInt(text)})
     
   }
   return (
@@ -73,7 +73,7 @@ const WalletScreen = () => {
       Expenses
       </Text>
       <TextInput
-      
+
     placeholder='Type'
     placeholderTextColor={'#7f3dff'}
     style={styles.textInput}
